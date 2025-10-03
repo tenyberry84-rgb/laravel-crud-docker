@@ -31,8 +31,9 @@ docker stack deploy -c docker-compose.yml laravel
 - `DELETE /api/tasks/{id}` - Delete task
 
 ## Tech Stack
-- PHP 8.2
-- Laravel (custom lightweight)
-- MySQL 8.0
-- Redis 7
-- Nginx + Supervisor
+- PHP 8.2-FPM (Alpine Linux)
+- Laravel (custom lightweight CRUD API)
+- MySQL 8.0 (persistent storage with volumes)
+- Redis 7 (caching layer)
+- Nginx + Supervisor (process management)
+- Docker multi-stage build (optimized for production)
