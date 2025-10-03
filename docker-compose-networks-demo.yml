@@ -1,0 +1,39 @@
+services:
+  # Frontend (public-facing)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    networks:
+      - frontend
+      - backend
+
+  # Backend API
+  api:
+    image: laravel-crud:latest
+    networks:
+      - backend
+      - database-net
+
+  # Database (most isolated)
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=app
+    networks:
+      - database-net  # ONLY accessible from api, not from nginx
+
+  # Redis (shared cache)
+  cache:
+    image: redis:7-alpine
+    networks:
+      - backend
+
+networks:
+  frontend:    # Public layer
+    driver: bridge
+  backend:     # Application layer
+    driver: bridge
+  database-net: # Data layer (most secure)
+    driver: bridge

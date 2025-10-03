@@ -1,0 +1,31 @@
+# Environment files (NEVER commit secrets!)
+.env
+.env.*
+
+# Docker volumes data
+src/storage/
+src/bootstrap/cache/
+
+# Dependencies (large files, reinstall instead)
+src/vendor/
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+
+# Test files
+.phpunit.result.cache
