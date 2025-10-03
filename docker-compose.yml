@@ -1,11 +1,12 @@
 services:
   app:
     # Use pre-built image from GHCR (faster!)
-    # To build locally, uncomment build section and comment image line
+    # To build locally, uncomment build section and comment image line below
     # build:
     #   context: .
     #   dockerfile: Dockerfile
     image: ghcr.io/tenyberry84-rgb/laravel-crud:1.0.0
+    # Production-ready configuration with health checks and resource limits
     ports:
       - "8080:80"
     deploy:

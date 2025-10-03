@@ -1,6 +1,9 @@
-# Laravel CRUD with Docker
+# Laravel CRUD with Docker 🐳
 
-Laravel CRUD API with multi-stage Docker build, MySQL, Redis, and Docker Swarm support.
+A production-ready Laravel CRUD API with multi-stage Docker build, MySQL, Redis, and Docker Swarm support.
+
+[![Docker](https://img.shields.io/badge/Docker-Multi--stage-blue)](https://www.docker.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.2-purple)](https://www.php.net/)
 
 ## Features
 - Multi-stage Dockerfile (optimized size)
